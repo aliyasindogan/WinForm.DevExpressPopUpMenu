@@ -35,7 +35,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -47,16 +46,19 @@
             this.navigationBarItem1 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
             this.officeNavigationBar2 = new DevExpress.XtraBars.Navigation.OfficeNavigationBar();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar2)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // popupMenu1
@@ -106,24 +108,14 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 577);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.gridControl1);
-            this.groupBox2.Location = new System.Drawing.Point(3, 179);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(535, 377);
-            this.groupBox2.TabIndex = 87;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kullanıcı Listesi";
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 17);
+            this.gridControl1.Location = new System.Drawing.Point(2, 23);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(529, 357);
+            this.gridControl1.Size = new System.Drawing.Size(522, 403);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -144,7 +136,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(409, 53);
+            this.btnSave.Location = new System.Drawing.Point(414, 46);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 24);
             this.btnSave.TabIndex = 80;
@@ -153,7 +145,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(223, 36);
+            this.labelControl5.Location = new System.Drawing.Point(224, 31);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(32, 13);
             this.labelControl5.TabIndex = 77;
@@ -162,14 +154,14 @@
             // txtLastName
             // 
             this.txtLastName.EditValue = "";
-            this.txtLastName.Location = new System.Drawing.Point(223, 55);
+            this.txtLastName.Location = new System.Drawing.Point(224, 50);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(169, 20);
             this.txtLastName.TabIndex = 74;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(28, 36);
+            this.labelControl1.Location = new System.Drawing.Point(35, 36);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(15, 13);
             this.labelControl1.TabIndex = 78;
@@ -178,7 +170,7 @@
             // txtFirstName
             // 
             this.txtFirstName.EditValue = "";
-            this.txtFirstName.Location = new System.Drawing.Point(28, 55);
+            this.txtFirstName.Location = new System.Drawing.Point(35, 50);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(169, 20);
             this.txtFirstName.TabIndex = 75;
@@ -205,27 +197,35 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(409, 53);
+            this.btnEdit.Location = new System.Drawing.Point(414, 46);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 24);
             this.btnEdit.TabIndex = 80;
             this.btnEdit.Text = "Düzenle";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // groupBox1
+            // groupControl1
             // 
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.labelControl5);
-            this.groupBox1.Controls.Add(this.txtLastName);
-            this.groupBox1.Controls.Add(this.labelControl1);
-            this.groupBox1.Controls.Add(this.txtFirstName);
-            this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Location = new System.Drawing.Point(2, 43);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(535, 110);
-            this.groupBox1.TabIndex = 88;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kullanıcı";
+            this.groupControl1.Controls.Add(this.btnSave);
+            this.groupControl1.Controls.Add(this.labelControl5);
+            this.groupControl1.Controls.Add(this.txtFirstName);
+            this.groupControl1.Controls.Add(this.txtLastName);
+            this.groupControl1.Controls.Add(this.labelControl1);
+            this.groupControl1.Controls.Add(this.btnEdit);
+            this.groupControl1.Location = new System.Drawing.Point(6, 48);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(526, 92);
+            this.groupControl1.TabIndex = 93;
+            this.groupControl1.Text = "Kullanıcı";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.gridControl1);
+            this.groupControl2.Location = new System.Drawing.Point(6, 146);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(526, 428);
+            this.groupControl2.TabIndex = 94;
+            this.groupControl2.Text = "Kullanıcı Listesi";
             // 
             // xucUserList
             // 
@@ -233,9 +233,9 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupControl2);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.officeNavigationBar2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -245,14 +245,16 @@
             this.Load += new System.EventHandler(this.xucUserList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,10 +268,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraBars.Navigation.OfficeNavigationBar officeNavigationBar2;
         private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtLastName;
@@ -279,5 +279,7 @@
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }
