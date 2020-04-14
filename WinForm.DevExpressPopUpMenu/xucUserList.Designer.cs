@@ -43,12 +43,13 @@
             this.txtFirstName = new DevExpress.XtraEditors.TextEdit();
             this.navigationBarItem1 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
             this.officeNavigationBar2 = new DevExpress.XtraBars.Navigation.OfficeNavigationBar();
+            this.btnGridList = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSelectedRows = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnSelectedRows = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).BeginInit();
@@ -168,6 +169,7 @@
             // 
             this.officeNavigationBar2.AutoSize = false;
             this.officeNavigationBar2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.officeNavigationBar2.Controls.Add(this.btnGridList);
             this.officeNavigationBar2.Controls.Add(this.btnSelectedRows);
             this.officeNavigationBar2.CustomizationButtonVisibility = DevExpress.XtraBars.Navigation.CustomizationButtonVisibility.Hidden;
             this.officeNavigationBar2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -179,6 +181,24 @@
             this.officeNavigationBar2.Size = new System.Drawing.Size(541, 40);
             this.officeNavigationBar2.TabIndex = 86;
             this.officeNavigationBar2.Text = "officeNavigationBar2";
+            // 
+            // btnGridList
+            // 
+            this.btnGridList.Location = new System.Drawing.Point(259, 9);
+            this.btnGridList.Name = "btnGridList";
+            this.btnGridList.Size = new System.Drawing.Size(133, 24);
+            this.btnGridList.TabIndex = 80;
+            this.btnGridList.Text = "Listeyi Yenile";
+            this.btnGridList.Click += new System.EventHandler(this.btnGridListRefresh_Click);
+            // 
+            // btnSelectedRows
+            // 
+            this.btnSelectedRows.Location = new System.Drawing.Point(398, 9);
+            this.btnSelectedRows.Name = "btnSelectedRows";
+            this.btnSelectedRows.Size = new System.Drawing.Size(133, 24);
+            this.btnSelectedRows.TabIndex = 80;
+            this.btnSelectedRows.Text = "Seçili Satırları Getir";
+            this.btnSelectedRows.Click += new System.EventHandler(this.btnSelectedRows_Click);
             // 
             // btnEdit
             // 
@@ -229,15 +249,6 @@
             this.groupControl3.Size = new System.Drawing.Size(526, 100);
             this.groupControl3.TabIndex = 94;
             this.groupControl3.Text = "Kullanıcı";
-            // 
-            // btnSelectedRows
-            // 
-            this.btnSelectedRows.Location = new System.Drawing.Point(398, 9);
-            this.btnSelectedRows.Name = "btnSelectedRows";
-            this.btnSelectedRows.Size = new System.Drawing.Size(133, 24);
-            this.btnSelectedRows.TabIndex = 80;
-            this.btnSelectedRows.Text = "Seçili Satırları Getir";
-            this.btnSelectedRows.Click += new System.EventHandler(this.btnSelectedRows_Click);
             // 
             // xucUserList
             // 
@@ -295,5 +306,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btnSelectedRows;
+        private DevExpress.XtraEditors.SimpleButton btnGridList;
     }
 }

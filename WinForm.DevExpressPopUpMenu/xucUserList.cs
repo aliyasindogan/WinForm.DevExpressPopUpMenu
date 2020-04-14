@@ -187,6 +187,11 @@ namespace WinForm.DevExpressPopUpMenu
             }
         }
 
+        private void btnGridListRefresh_Click(object sender, EventArgs e)
+        {
+            gridControl1.DataSource = db.Users.ToList();
+        }
+
         #endregion PopupMenu
     }
 }
