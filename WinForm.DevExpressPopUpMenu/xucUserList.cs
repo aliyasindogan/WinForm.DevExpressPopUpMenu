@@ -27,7 +27,7 @@ namespace WinForm.DevExpressPopUpMenu
         public xucUserList()
         {
             InitializeComponent();
-            gridControl1.DataSource = db.Users.ToList();
+            GridViewFill();
         }
 
         #endregion Constructor
@@ -55,10 +55,13 @@ namespace WinForm.DevExpressPopUpMenu
 
             #region gridView1
 
+            //Bu özellik kolonun otomatik olup olmayacağını kontrol eder.
+            gridView1.OptionsView.ColumnAutoWidth = true;
+            //Gridviewdeki düzenleme (Edit) özelliğini kontrol eder.
             gridView1.OptionsBehavior.Editable = false;
-            // This property controls whether multi-select feature is enabled
+            // Bu özellik çoklu seçim özelliğinin etkin olup olmadığını kontrol eder
             gridView1.OptionsSelection.MultiSelect = true;
-            // Controls whether multiple cells or rows can be selected
+            // Birden fazla hücre veya satır seçilip seçilemeyeceğini kontrol eder
             gridView1.OptionsSelection.MultiSelectMode = GridMultiSelectMode.CheckBoxRowSelect;
 
             #endregion gridView1
@@ -86,7 +89,23 @@ namespace WinForm.DevExpressPopUpMenu
             db.SaveChanges();
             txtFirstName.Text = "";
             txtLastName.Text = "";
+            GridViewFill();
+        }
+
+        private void GridViewFill()
+        {
             gridControl1.DataSource = db.Users.ToList();
+            //Gridview de Sol taraftaki boşluk kaldırılıyor.
+            gridView1.OptionsView.ShowIndicator = false;
+            //c
+            gridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 25;
+            //Kolonu gizleme
+            gridView1.Columns[0].Visible = false; //Id
+            //Kolona Tooltip ekleme
+            gridView1.Columns[1].ToolTip = "ToolTip";
+            //Kolonu uzunluğunu verme
+            gridView1.Columns[1].MaxWidth = 125;
+            gridView1.Columns[2].MaxWidth = 125;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -100,7 +119,7 @@ namespace WinForm.DevExpressPopUpMenu
             btnSave.Visible = true;
             txtFirstName.Text = "";
             txtLastName.Text = "";
-            gridControl1.DataSource = db.Users.ToList();
+            GridViewFill();
         }
 
         private void btnSelectedRows_Click(object sender, EventArgs e)
@@ -150,7 +169,7 @@ namespace WinForm.DevExpressPopUpMenu
                 var user = db.Users.FirstOrDefault(x => x.Id == selectedID);
                 db.Users.Remove(user);
                 db.SaveChanges();
-                gridControl1.DataSource = db.Users.ToList();
+                GridViewFill();
             }
 
             if (e.Item.Caption == "Tümünü Sil")
@@ -159,7 +178,7 @@ namespace WinForm.DevExpressPopUpMenu
                 db.Users.RemoveRange(users);
                 db.SaveChanges();
                 XtraMessageBox.Show("Tüm Kullanıcılar Silindi !'", "İşlem Başarılı !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                gridControl1.DataSource = db.Users.ToList();
+                GridViewFill();
             }
 
             if (e.Item.Caption == "Seçilenleri Sil")
@@ -176,7 +195,7 @@ namespace WinForm.DevExpressPopUpMenu
                         db.SaveChanges();
                     }
                 }
-                gridControl1.DataSource = db.Users.ToList();
+                GridViewFill();
 
                 XtraMessageBox.Show("Silenenlerin Listesi:\n" + selectedRowList, "İşlem Başarılı !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -197,7 +216,7 @@ namespace WinForm.DevExpressPopUpMenu
 
         private void btnGridListRefresh_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = db.Users.ToList();
+            GridViewFill();
         }
 
         #endregion PopupMenu
