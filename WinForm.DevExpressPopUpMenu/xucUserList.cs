@@ -45,6 +45,14 @@ namespace WinForm.DevExpressPopUpMenu
 
             #endregion popupMenu1
 
+            #region ColumnSizeAuto
+
+            //Kolon genişlikleri otomatik genişletiliyor.
+            gridControl1.ForceInitialize();
+            gridView1.BestFitColumns();
+
+            #endregion ColumnSizeAuto
+
             #region gridView1
 
             gridView1.OptionsBehavior.Editable = false;
