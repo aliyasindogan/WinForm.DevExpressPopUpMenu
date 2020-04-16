@@ -97,7 +97,7 @@ namespace WinForm.DevExpressPopUpMenu
             gridControl1.DataSource = db.Users.ToList();
             //Gridview de Sol taraftaki boşluk kaldırılıyor.
             gridView1.OptionsView.ShowIndicator = false;
-            //c
+            //Seçilen Checkbox Uzunluğu
             gridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 25;
             //Kolonu gizleme
             gridView1.Columns[0].Visible = false; //Id
